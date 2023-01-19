@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.zerock.api01.security.exception.AccessTokenException;
+import org.zerock.api01.security.exception.RefreshTokenException;
 import org.zerock.api01.util.JWTUtil;
 
 import javax.servlet.FilterChain;
@@ -72,6 +73,7 @@ public class TokenCheckFilter extends OncePerRequestFilter {
             log.error("ExpiredJwtException------------------------------");
             throw new AccessTokenException(AccessTokenException.TOKEN_ERROR.EXPIRED);
         }
-
     }
+
+
 }
